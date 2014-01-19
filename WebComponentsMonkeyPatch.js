@@ -12,8 +12,8 @@
     }
 
     // Alias document.register to document.registerElement
-    if('register' in document || 'registerElement' in document){
-        document.register = document.registerElement = document.register || document.register;
+    if(document.register !== undefined && document.registerElement === undefined) {
+        document.registerElement = document.register;
     }
 
 })();
