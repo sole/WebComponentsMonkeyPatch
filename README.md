@@ -2,9 +2,10 @@
 
 A library to write web components code using modern unprefixed syntax.
 
-But so far only one thing is fixed:
+But so far only two things are fixed:
 
 * `webkitCreateShadowRoot` is patched to `createShadowRoot`
+* `document.register`      is patched to `document.registerElement`
 
 If your browser supports unprefixed methods, nothing will be patched (so far that's only recent [Firefox Nightlies](http://nightly.mozilla.org/) with `dom.webcomponents.enabled` set to true).
 
