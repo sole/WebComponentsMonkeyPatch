@@ -12,3 +12,9 @@
     }
 
 })();
+
+(function() {
+  if('register' in document || 'registerElement' in document){
+    document.register = document.registerElement = document.register || document.register;
+  }
+})();
