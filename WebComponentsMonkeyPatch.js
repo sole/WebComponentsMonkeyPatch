@@ -11,9 +11,12 @@
 
     }
 
+
     // Alias document.register to document.registerElement
     if(document.register !== undefined && document.registerElement === undefined) {
+
         document.registerElement = document.register;
+
     }
 
 })();
