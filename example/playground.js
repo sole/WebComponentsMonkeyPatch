@@ -34,6 +34,14 @@ window.onload = function() {
       missingFeatures.push('templates');
     }
 
+    // CUSTOM ELEMENTS
+    // Can we register custom elements?
+    if(document.registerElement !== undefined) {
+      // good
+    } else {
+      missingFeatures.push('custom elements');
+    }
+
     return missingFeatures;
 
   }
