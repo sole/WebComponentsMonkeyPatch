@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Web Components + WebComponentsMonkeyPatch playground</h1>
+
+        <p>The purpose of this example is to build some sort of playground that demonstrates how to use 'raw' Web Components. It's a work in progress!</p>
+
+        <h2>Templates</h2>
+
+        <p>Are templates available in this browser? <span id="templatesAvailable">TODO</span></p>
+        
+        <button id="templateAdd">Press to add items to the list using a template</button>
+
+        <ul id="templateInstancesParent"></ul>
+        
+        <template id="fancyListItemTemplate">
+            <li>
+                <strong><span>Something</span>:</strong> <em>Maybe</em>
+            </li>
+        </template>
+
+        <script src="../WebComponentsMonkeyPatch.js"></script>
+        <script src="playground.js"></script>
+    </body>
+</html>
