@@ -24,7 +24,7 @@ window.onload = function() {
 
     if(templateItem.content !== undefined) {
       resTemplates.textContent = 'YAY';
-      btnTemplateAdd.addEventListener('click', templateAdd);
+      btnTemplateAdd.addEventListener('click', templateAdd, false);
       templateAdd(); // Add an item so the list is not empty (and invisible)
     } else {
       // nope
@@ -34,17 +34,39 @@ window.onload = function() {
       missingFeatures.push('templates');
     }
 
+
     // CUSTOM ELEMENTS
     // Can we register custom elements?
-    if(document.registerElement !== undefined) {
-      // good
-    } else {
-      missingFeatures.push('custom elements');
+    // Wrapping in a try and throwing an exception too because currently registering an element
+    // which doesn't start with x- won't work in Firefox.
+    try {
+      var btnExtendElement = document.getElementById('btnExtendElement');
+
+      if(document.registerElement !== undefined) {
+
+        var buttonPrototype = Object.create(HTMLButtonElement.prototype);
+
+          document.registerElement('colourful-button', {
+            extends: 'button',
+            prototype: buttonPrototype
+          });
+
+          btnExtendElement.addEventListener('click', makeColourfulButton, false);
+
+      } else {
+        throw new Error('document.registerElement not available');
+      }
+
+    } catch(e) {
+        console.log(e.message);
+        missingFeatures.push('custom elements');
+        btnExtendElement.disabled = true;
     }
 
     return missingFeatures;
 
   }
+
 
   function templateAdd() {
     var t = document.querySelector("#fancyListItemTemplate");
@@ -55,6 +77,13 @@ window.onload = function() {
     item.querySelector('strong').innerHTML = 'Item number ' + parentList.children.length;
     item.querySelector('em').textContent = "Anything is fine: " + Math.random();
     parentList.appendChild(item);
+  }
+
+
+  function makeColourfulButton() {
+    var btn = document.createElement('colourful-button');
+    btn.innerHTML = 'hey';
+    document.getElementById('colourfulButtons').appendChild(btn);
   }
 
 

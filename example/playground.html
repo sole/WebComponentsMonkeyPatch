@@ -3,6 +3,7 @@
   <head>
       <meta charset="utf-8">
       <title>Web Components + WebComponentsMonkeyPatch playground</title>
+      <link rel="stylesheet" href="style.css" type="text/css" />
     </head>
     <body>
         <h1>Web Components + WebComponentsMonkeyPatch playground</h1>
@@ -13,7 +14,7 @@
 
         <p>Are templates available in this browser? <span id="templatesAvailable">???</span></p>
         
-        <button id="templateAdd">Press to add items to the list using a template</button>
+        <p><button id="templateAdd">Press to add items to the list using a template</button></p>
 
         <ul id="templateInstancesParent"></ul>
         
@@ -26,7 +27,11 @@
 
         <h2>Custom elements</h2>
 
-        <p>...</p>
+        <h3>Extending existing elements</h3>
+
+        <p><button id="btnExtendElement">Press to create instances of colourful buttons</button></p>
+
+        <div id="colourfulButtons"></div>
 
         <script src="../WebComponentsMonkeyPatch.js"></script>
         <script src="playground.js"></script>
