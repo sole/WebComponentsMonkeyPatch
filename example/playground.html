@@ -1,39 +1,40 @@
 <!doctype html>
 <html>
-  <head>
-      <meta charset="utf-8">
-      <title>Web Components + WebComponentsMonkeyPatch playground</title>
-      <link rel="stylesheet" href="style.css" type="text/css" />
-    </head>
-    <body>
-        <h1>Web Components + WebComponentsMonkeyPatch playground</h1>
+    <head>
+            <meta charset="utf-8">
+            <title>Web Components + WebComponentsMonkeyPatch playground</title>
+            <link rel="stylesheet" href="style.css" type="text/css" />
+        </head>
+        <body>
+                <h1>Web Components + WebComponentsMonkeyPatch playground</h1>
 
-        <p>The purpose of this example is to build some sort of playground that demonstrates how to use 'raw' Web Components with the latest standard, unprefixed naming conventions. E.g. <tt>createShadowRoot</tt> instead of <tt>webkitCreateShadowRoot</tt>. It's a work in progress!</p>
+                <p>The purpose of this example is to build some sort of playground that demonstrates how to use 'raw' Web Components with the latest standard, unprefixed naming conventions. E.g. <tt>createShadowRoot</tt> instead of <tt>webkitCreateShadowRoot</tt>. It's a work in progress!</p>
 
-        <h2>Templates</h2>
+                <h2>Templates</h2>
 
-        <p>Are templates available in this browser? <span id="templatesAvailable">???</span></p>
-        
-        <p><button id="templateAdd">Press to add items to the list using a template</button></p>
+                <p>Are templates available in this browser? <span id="templatesAvailable">???</span></p>
+                
+                <p><button id="templateAdd">Press to add items to the list using a template</button></p>
 
-        <ul id="templateInstancesParent"></ul>
-        
-        <template id="fancyListItemTemplate">
-            <li>
-                <strong><span>You shouldn't be seeing this content</span>:</strong> <em>It means your browser is rendering the template</em>
-            </li>
-        </template>
+                <ul id="templateInstancesParent"></ul>
+                
+                <template id="fancyListItemTemplate">
+                        <li>
+                                <strong><span>You shouldn't be seeing this content</span>:</strong> <em>It means your browser is rendering the template</em>
+                        </li>
+                </template>
 
 
-        <h2>Custom elements</h2>
+                <h2>Custom elements</h2>
 
-        <h3>Extending existing elements</h3>
+                <h3>Extending existing elements</h3>
 
-        <p><button id="btnExtendElement">Press to create instances of colourful buttons</button></p>
+                <p><button id="btnExtendElement">Press to create instances of colourful buttons</button></p>
+                <p><button id="btnExtendElementCtor">Press to create instances of colourful buttons using another method (constructor returned by <tt>registerElement</tt>)</button></p>
 
-        <div id="colourfulButtons"></div>
+                <div id="colourfulButtons"></div>
 
-        <script src="../WebComponentsMonkeyPatch.js"></script>
-        <script src="playground.js"></script>
-    </body>
+                <script src="../WebComponentsMonkeyPatch.js"></script>
+                <script src="playground.js"></script>
+        </body>
 </html>
